@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="odoo_picking_secuence_view_list" model="ir.ui.view">
+        <field name="name">odoo_picking_secuence.view.list</field>
+        <field name="model">odoo.picking.secuence</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="state"/>
+                <field name="amount"/>
+            </list>
+        </field>
+    </record>
+    <record id="odoo_picking_secuence_view_form" model="ir.ui.view">
+        <field name="name">odoo_picking_secuence.view.form</field>
+        <field name="model">odoo.picking.secuence</field>
+        <field name="arch" type="xml">
+            <form string="Form">
+                <header>
+                    <button name="action_do_something" type="object" string="Do Something" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="state"/>
+                        <field name="description"/>
+                        <field name="amount"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="odoo_picking_secuence_view_kanban" model="ir.ui.view">
+        <field name="name">odoo_picking_secuence.view.kanban</field>
+        <field name="model">odoo.picking.secuence</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <strong><field name="name"/></strong><br/>
+                            <field name="state"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="odoo_picking_secuence_view_search" model="ir.ui.view">
+        <field name="name">odoo_picking_secuence.view.search</field>
+        <field name="model">odoo.picking.secuence</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="state"/>
+                <filter string="Active" name="active" domain="[('active','=',True)]"/>
+            </search>
+        </field>
+    </record>
+    <record id="action_odoo_picking_secuence" model="ir.actions.act_window">
+        <field name="name">Odoo Picking Secuence</field>
+        <field name="res_model">odoo.picking.secuence</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+    <menuitem id="menu_odoo_picking_secuence_root" name="Odoo Picking Secuence"/>
+    <menuitem id="menu_odoo_picking_secuence_main" name="Records" parent="menu_odoo_picking_secuence_root" action="action_odoo_picking_secuence"/>
+</odoo>
