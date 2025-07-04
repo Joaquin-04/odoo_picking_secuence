@@ -1,0 +1,14 @@
+<odoo>
+    <!-- noupdate="1" esto permite que no se reinicie la secuencia cuando se actualice el modulo -->
+    <data noupdate="1">
+        <!--Si necesitas que la secuencia no se reinicie al actualizar el módulo, usa noupdate="0" o elimina el atributo noupdate.-->
+        <record id="seq_internal_picking" model="ir.sequence">
+            <field name="name">Secuencia Interno</field>
+            <field name="code">custom.project.number</field>
+            <!--<field name="prefix">20000</field>-->
+            <field name="padding">5</field>
+            <field name="number_next">1</field>  <!-- ¡Clave aquí! -->
+            <field name="company_id" eval="False" />
+        </record>
+    </data>
+</odoo>

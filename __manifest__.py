@@ -8,6 +8,7 @@
     "maintainer": "",
     "depends": ["stock"],
     "data": [
+    'data/ir_sequence_data.xml',
     #"security/ir.model.access.csv",
     #"views/odoo_picking_secuence_views.xml"
     ],
